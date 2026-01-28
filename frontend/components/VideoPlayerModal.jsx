@@ -7,7 +7,6 @@ export default function VideoPlayerModal({ videoId, onClose }) {
 
   useEffect(() => {
     setDomLoaded(true);
-    // Prevent scrolling when modal is open
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = 'unset';
@@ -18,10 +17,7 @@ export default function VideoPlayerModal({ videoId, onClose }) {
 
   return (
     <div className="fixed inset-0 bg-black/95 z-[999] flex items-center justify-center p-4">
-      {/* Background Overlay */}
       <div className="absolute inset-0 cursor-pointer" onClick={onClose} />
-
-      {/* Close Button */}
       <button
         onClick={onClose}
         className="absolute top-6 right-6 text-white hover:text-zinc-400 transition-colors z-[1000]"
@@ -29,7 +25,7 @@ export default function VideoPlayerModal({ videoId, onClose }) {
         <X size={36} />
       </button>
 
-      {/* Video Container */}
+      {/* Video */}
       <div className="w-full max-w-5xl aspect-video relative z-[1000] shadow-2xl rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800">
         <iframe
           width="100%"
