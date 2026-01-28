@@ -2,13 +2,13 @@ import Collection from "../models/Collection.js";
 import catchAsync from "../utils/catchAsync.js";
 import AppError from "../utils/AppError.js";
 
-// GET all collections
+// GET
 export const getAllCollections = catchAsync(async (req, res) => {
   const collections = await Collection.find();
   res.status(200).json(collections);
 });
 
-// CREATE collection
+// CREATE 
 export const createCollection = catchAsync(async (req, res) => {
   const { name } = req.body;
 
@@ -24,14 +24,12 @@ export const createCollection = catchAsync(async (req, res) => {
   res.status(201).json(collection);
 });
 
-// UPDATE collection name
+// UPDATE 
 export const updateCollectionName = catchAsync(async (req, res) => {
   const { name } = req.body;
-
   if (!name || !name.trim()) {
     throw new AppError("Collection name is required", 400);
   }
-
   const collection = await Collection.findByIdAndUpdate(
     req.params.id,
     { name: name.trim() },
@@ -41,18 +39,15 @@ export const updateCollectionName = catchAsync(async (req, res) => {
   if (!collection) {
     throw new AppError("Collection not found", 404);
   }
-
   res.status(200).json(collection);
 });
 
-// DELETE collection
+// DELETE 
 export const deleteCollection = catchAsync(async (req, res) => {
   const collection = await Collection.findByIdAndDelete(req.params.id);
-
   if (!collection) {
     throw new AppError("Collection not found", 404);
   }
-
   res.status(204).send();
 });
 
@@ -70,7 +65,7 @@ export const addVideoToCollection = catchAsync(async (req, res) => {
   res.status(200).json(collection);
 });
 
-// REMOVE video
+// REMOVE
 export const removeVideoFromCollection = catchAsync(async (req, res) => {
   const collection = await Collection.findByIdAndUpdate(
     req.params.id,
