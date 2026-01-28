@@ -24,7 +24,7 @@ export default function VideoCard({ video }) {
     <div className="group bg-zinc-900/50 border border-zinc-800/60 rounded-xl overflow-hidden hover:border-zinc-600 transition-all duration-300 flex flex-col">
       <div
         className="relative aspect-video overflow-hidden cursor-pointer"
-        onClick={() => setSelectedVideoId(videoId)} // OPEN MODAL
+        onClick={() => setSelectedVideoId(videoId)}
       >
         <img
           src={thumb}
