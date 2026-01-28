@@ -29,11 +29,7 @@ export default function CreateCollectionSlider({ close, editCollection }) {
         className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] transition-opacity duration-300" 
         onClick={close} 
       />
-
-      {/* 2. Slider Panel */}
       <div className="fixed right-0 top-0 h-full w-full max-w-[350px] bg-zinc-950 border-l border-zinc-800 z-[101] shadow-2xl flex flex-col p-0 overflow-hidden">
-        
-        {/* Header Section */}
         <div className="p-6 border-b border-zinc-900 bg-zinc-900/30 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-blue-500/10 rounded-lg">
@@ -59,8 +55,6 @@ export default function CreateCollectionSlider({ close, editCollection }) {
             <X className="w-5 h-5" />
           </button>
         </div>
-
-        {/* Form Body */}
         <form onSubmit={save} className="flex-1 p-6 flex flex-col justify-between">
           <div className="space-y-4">
             <div className="space-y-2">
@@ -77,8 +71,6 @@ export default function CreateCollectionSlider({ close, editCollection }) {
               />
             </div>
           </div>
-
-          {/* Action Button */}
           <button 
             type="submit"
             className="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20 transition-all active:scale-[0.98]"
