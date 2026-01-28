@@ -13,8 +13,6 @@ export function AppProvider({ children }) {
   const [savedVideos, setSavedVideos] = useState([]);
   const [activeMenu, setActiveMenu] = useState("home");
   const [activeCollection, setActiveCollection] = useState(null);
-
-  // --- STATE FOR VIDEO PLAYER MODAL ---
   const [selectedVideoId, setSelectedVideoId] = useState(null);
 
   useEffect(() => {
