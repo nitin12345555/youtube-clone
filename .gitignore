@@ -7,3 +7,4 @@ node_modules/
 # Build folders
 dist/
 build/
+git init

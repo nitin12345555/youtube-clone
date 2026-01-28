@@ -1,3 +1,7 @@
-export default axios.create({
-  baseURL: "https://youtube-clone-eosin-five.vercel.app/api",
+import axios from "axios";
+
+const axiosInstance = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
 });
+
+export default axiosInstance;
