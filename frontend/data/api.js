@@ -1,7 +1,7 @@
 const apiStore = {
-  collections: "/collections",
-  savedVideos: "/saved-videos",
-  search: "/search?q=",  
+  collections: "/api/collections",
+  savedVideos: "/api/saved-videos",
+  search: "/api/search?q=",  
 };
 
 export default apiStore;
