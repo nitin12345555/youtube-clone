@@ -11,7 +11,7 @@ export default function VideoCard({ video }) {
     collections,
     activeMenu,
     activeCollection,
-    setSelectedVideoId, // important
+    setSelectedVideoId,
   } = useApp();
 
   const videoId = video.videoId || video.id?.videoId;
