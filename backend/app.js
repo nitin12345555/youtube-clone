@@ -18,7 +18,7 @@ app.use(express.json());
 connectDB();
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://your-frontend.vercel.app"
+  "https://youtube-clone-eosin-five.vercel.app"
 ];
 app.use(cors({ origin: allowedOrigins }));
 
