@@ -12,16 +12,15 @@ import globalErrorHandler from "./middleware/errorMiddleware.js";
 
 const app = express();
 
-
 app.use(express.json());
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+);
 
 connectDB();
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://youtube-clone-eosin-five.vercel.app"
-];
-app.use(cors({ origin: allowedOrigins }));
-
 
 app.get("/", (req, res) => res.send("Backend is live"));
 
@@ -29,9 +28,7 @@ app.use("/api/search", searchRoutes);
 app.use("/api/collections", collectionRoutes);
 app.use("/api/saved-videos", savedVideoRoutes);
 
-
 app.all("*", (req, res, next) => next(new AppError("Route not found", 404)));
 app.use(globalErrorHandler);
 
-// --- Vercel Export ---
 export default app;
