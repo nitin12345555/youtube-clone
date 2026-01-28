@@ -30,7 +30,7 @@ export default function Sidebar() {
   const [showSlider, setShowSlider] = useState(false);
   const [collectionToEdit, setCollectionToEdit] = useState(null);
 
-  // ----- Handlers -----
+  
   const goHome = () => {
     setActiveMenu("home");
     setActiveCollection(null);
