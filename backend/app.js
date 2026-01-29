@@ -17,7 +17,6 @@ app.use(
     credentials: true,
   })
 );
-
 connectDB();
 
 app.get("/", (req, res) => res.send("Backend is live"));
