@@ -20,7 +20,6 @@ export default function CollectionMainPage({ onOpenSettings }) {
     if (!ok) return;
     await deleteCollection(activeCollection._id);
   };
-
   return (
     <div className="p-6 max-w-7xl mx-auto">
       <header className="flex justify-between items-center mb-6">
