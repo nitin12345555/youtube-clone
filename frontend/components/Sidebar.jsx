@@ -56,29 +56,23 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Mobile Header */}
       <div className="md:hidden p-4 flex justify-between items-center bg-black border-b border-zinc-800 z-50 relative">
         <Image src={youtube} alt="logo" width={32} height={32} />
         <button onClick={() => setMenuOpen(!menuOpen)}>
           <IoMenuOutline size={24} />
         </button>
       </div>
-
-      {/* Mobile Overlay */}
       {menuOpen && (
         <div
           className="fixed inset-0 bg-black/60 z-40 md:hidden"
           onClick={() => setMenuOpen(false)}
         />
       )}
-
-      {/* Sidebar */}
       <aside
         className={`fixed md:sticky top-0 left-0 h-screen w-72 bg-black border-r border-zinc-800
         transition-transform z-50
         ${menuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
       >
-        {/* Logo */}
         <div
           onClick={goHome}
           className="p-6 flex items-center gap-3 cursor-pointer"
@@ -88,7 +82,6 @@ export default function Sidebar() {
         </div>
 
         <nav className="px-4 space-y-2">
-          {/* Main menu */}
           <MenuButton
             active={activeMenu === "home"}
             icon={activeMenu === "home" ? IoHome : IoHomeOutline}
@@ -112,8 +105,6 @@ export default function Sidebar() {
           />
 
           <hr className="my-4 border-zinc-800" />
-
-          {/* Playlists header */}
           <div className="flex justify-between items-center text-xs text-zinc-500 uppercase">
             <span>Playlists</span>
             <button onClick={openCreate}>
