@@ -15,8 +15,8 @@ export default function HomePage() {
     savedVideos,
     search,
     activeCollection,
-    selectedVideoId,    // 2. Get state from context
-    setSelectedVideoId, // 3. Get setter from context
+    selectedVideoId,    
+    setSelectedVideoId, 
   } = useApp();
 
   const [showSlider, setShowSlider] = useState(false);
@@ -64,8 +64,6 @@ export default function HomePage() {
           editCollection={editCollection}
         />
       )}
-
-      {/* 4. RENDER MODAL GLOBALLY */}
       {selectedVideoId && (
         <VideoPlayerModal 
           videoId={selectedVideoId} 
